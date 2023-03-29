@@ -87,7 +87,7 @@ export function showCurrentData(weatherData, astronomyData) {
     // 1 week forecast section
 
     const weekTemp = document.querySelector('.week-temp');
-    weekTemp = `<div class="indicator">
+    weekTemp.innerHTML += `<div class="indicator">
         <div class="week-day">DAY</div>
         <div class="week-condition"></div>
         <div class="week-rain">CHANCE OF RAIN</div>
