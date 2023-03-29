@@ -7,7 +7,6 @@ export async function getWeather(place) {
         showCurrentData(weatherData)
         console.log(weatherData.forecast.forecastday[0].hour[0])
         console.log(weatherData)
-        console.log(weatherData)
         console.log(weatherData.current.temp_c);
         console.log('feels like: ' + weatherData.current.feelslike_c + ' C');
         console.log(weatherData.current.condition.text)
