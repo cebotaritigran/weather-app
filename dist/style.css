@@ -121,9 +121,11 @@ input {
 }
 
 .through-day-temp {
+    max-width: 300px;
     display: flex;
     padding-right: 50px;
     overflow: scroll;
+    gap: 20px;
 }
 
 
