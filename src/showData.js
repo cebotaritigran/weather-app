@@ -1,4 +1,5 @@
 export function showCurrentData(weatherData, astronomyData) {
+    //current day section
     const location = document.querySelector('.location');
     location.textContent = weatherData.location.name;
 
@@ -32,12 +33,16 @@ export function showCurrentData(weatherData, astronomyData) {
     changeCF.addEventListener('click', () => {
         if (showCel) {
             temperature.textContent = weatherData.current.temp_f + '°';
+            const feelsLike = document.querySelector('.feels-like');
+            feelsLike.textContent = weatherData.current.feelslike_f + '°';
             for (let i = 0; i < 24; i++) {
                 temperatureHour[i].textContent = weatherData.forecast.forecastday[0].hour[i].temp_f + '°';
             }
             showCel = false;
         } else {
             temperature.textContent = weatherData.current.temp_c + '°';
+            const feelsLike = document.querySelector('.feels-like');
+            feelsLike.textContent = weatherData.current.feelslike_c + '°';
             for (let i = 0; i < 24; i++) {
                 temperatureHour[i].textContent = weatherData.forecast.forecastday[0].hour[i].temp_c + '°';
             }
@@ -45,6 +50,7 @@ export function showCurrentData(weatherData, astronomyData) {
         }
     })
 
+    // information section
     const sunrise = document.querySelector('.sunrise');
     sunrise.textContent = astronomyData.astronomy.astro.sunrise;
 
@@ -68,4 +74,23 @@ export function showCurrentData(weatherData, astronomyData) {
 
     const uvIndex = document.querySelector('.uv-index');
     uvIndex.textContent = weatherData.current.uv;
+
+    // 1 week forecast section
+
+    const weekTemp = document.querySelector('.week-temp');
+    for (let day = 0; day < 7; day++) {
+        const d = new Date(weatherData.forecast.forecastday[day].date);
+
+        let dateDay = d.toString();
+
+        weekTemp.innerHTML += `
+        <div class='day'>
+        <div class='week-day'>${dateDay.substr(0, 10)}</div>
+        <div class='week-condition'><img src='${weatherData.forecast.forecastday[day].day.condition.icon}'></div>
+        <div class='week-rain'>${weatherData.forecast.forecastday[day].day.daily_chance_of_rain}%</div>
+        <div class='week-humidity'>${weatherData.forecast.forecastday[day].day.avghumidity}%</div>
+        <div class='week-temperature'>${weatherData.forecast.forecastday[day].day.avgtemp_c}°</div>
+        </div>
+        `
+    }
 }
