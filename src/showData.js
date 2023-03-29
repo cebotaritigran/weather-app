@@ -30,21 +30,30 @@ export function showCurrentData(weatherData, astronomyData) {
     let showCel = true;
     const changeCF = document.querySelector('.change-cel-fah');
     const temperatureHour = document.querySelectorAll('.temperatureHour');
+
     changeCF.addEventListener('click', () => {
         if (showCel) {
             temperature.textContent = weatherData.current.temp_f + '°';
             const feelsLike = document.querySelector('.feels-like');
             feelsLike.textContent = weatherData.current.feelslike_f + '°';
-            for (let i = 0; i < 24; i++) {
-                temperatureHour[i].textContent = weatherData.forecast.forecastday[0].hour[i].temp_f + '°';
+            for (let hour = 0; hour < 24; hour++) {
+                temperatureHour[hour].textContent = weatherData.forecast.forecastday[0].hour[hour].temp_f + '°';
+            }
+            const weekTemperature = document.querySelectorAll('.week-temperature')
+            for (let day = 0; day < 7; day++) {
+                weekTemperature[day].textContent = weatherData.forecast.forecastday[day].day.avgtemp_f + '°';
             }
             showCel = false;
         } else {
             temperature.textContent = weatherData.current.temp_c + '°';
             const feelsLike = document.querySelector('.feels-like');
             feelsLike.textContent = weatherData.current.feelslike_c + '°';
-            for (let i = 0; i < 24; i++) {
-                temperatureHour[i].textContent = weatherData.forecast.forecastday[0].hour[i].temp_c + '°';
+            for (let hour = 0; hour < 24; hour++) {
+                temperatureHour[hour].textContent = weatherData.forecast.forecastday[0].hour[hour].temp_c + '°';
+            }
+            const weekTemperature = document.querySelectorAll('.week-temperature')
+            for (let day = 0; day < 7; day++) {
+                weekTemperature[day].textContent = weatherData.forecast.forecastday[day].day.avgtemp_c + '°';
             }
             showCel = true;
         }

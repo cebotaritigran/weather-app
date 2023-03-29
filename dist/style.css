@@ -219,13 +219,14 @@ input {
 .week-condition,
 .week-rain,
 .week-humidity,
-.week-temperature {
+.week-temperature,
+.week-temperature-indi {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.day > div{
+.day>div {
     font-size: 18px;
     font-weight: 600;
 }
