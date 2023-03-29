@@ -16,19 +16,48 @@
 
 <body>
     <header class="header">
-        <div class="logo">test</div>
+        <div class="logo">
+            <ion-icon class="icon" name="sunny"></ion-icon>
+            <div class="title">WeatherApp</div>
+        </div>
         <div class="search-bar">
-            <form>
+            <form class="search-form" autocomplete="off">
                 <input id="place">
                 <button class="search-button">Search</button>
             </form>
         </div>
         <div class="cel-fah">
-            <button>°C / °F</button>
+            <button class="change-cel-fah">°C / °F</button>
         </div>
     </header>
-    <main class="main"></main>
+
+    <main class="main">
+        <div class="day-temp">
+            <div class="notify">some very long text that talks about the day</div>
+            <div class="show-temp">
+                <div class="current-temp">
+                    <div class="location">LONDON</div>
+                    <div class="condition">CLOUDS</div>
+                    <div class="temperature">5c</div>
+                    <div class="humidity-wind">
+                        <div class="humidity">10</div>
+                        <div class="wind">-1</div>
+                    </div>
+                </div>
+
+                <div class="through-day-temp">
+                </div>
+            </div>
+        </div>
+
+        <div class="detalis"></div>
+
+        <div class="week-temp"></div>
+    </main>
+
     <footer class="footer"></footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

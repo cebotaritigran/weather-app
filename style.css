@@ -1,27 +1,144 @@
-:root{
+:root {
     font-family: 'Roboto', sans-serif;
 }
-body{
+
+body {
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
+    gap: 30px;
 }
 
 /* HEADER */
 
-.header{
+.header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background-color: rgb(57, 61, 66);
+    padding: 30px;
+    gap: 30px;
+}
+
+.logo {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.logo .icon {
+    color: tomato;
+}
+
+.search-bar {
+    flex: 3;
+    max-width: 900px;
+}
+
+.search-form {
+    display: flex;
+    gap: 0;
+}
+
+input {
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+}
+
+.search-bar #place {
+    flex: 1;
+    min-width: 50%;
+    max-width: 60%;
+    height: 40px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 0px 10px;
+}
+
+.search-button {
+    width: 100px;
+    height: 40px;
+    border: none;
+    background-color: tomato;
+    color: white;
+    font-size: 20px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.cel-fah {
+    flex: 1;
+    width: 350px;
+}
+
+.change-cel-fah {
+    height: 40px;
+    padding: 0px;
+    margin: 0;
+    min-width: 100px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: tomato;
+    color: white;
+    font-size: 20px;
+}
+
+/* MAIN */
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.day-temp {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.notify {
+    width: 100%;
+    text-align: center;
+}
+
+.show-temp {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.through-day-temp {
+    display: flex;
+    padding-right: 50px;
+    overflow: scroll;
 }
 
 
 /* MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
-    .header{
+    .header {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 30px;
+        gap: 8px;
     }
-  }
+
+    .search-bar #place {
+        width: 250px;
+        max-width: 100%;
+        height: 40px;
+    }
+}
