@@ -87,6 +87,7 @@ export function showCurrentData(weatherData, astronomyData) {
     // 1 week forecast section
 
     const weekTemp = document.querySelector('.week-temp');
+    weekTemp.replaceChildren();
     for (let day = 0; day < 7; day++) {
         const d = new Date(weatherData.forecast.forecastday[day].date);
 
