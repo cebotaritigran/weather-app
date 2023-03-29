@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/cebotaritigran/weather-app/issues"
   },
-  "homepage": "https://github.com/cebotaritigran/weather-app#readme"
+  "homepage": "https://github.com/cebotaritigran/weather-app#readme",
+  "devDependencies": {
+    "webpack": "^5.76.3",
+    "webpack-cli": "^5.0.1"
+  }
 }
