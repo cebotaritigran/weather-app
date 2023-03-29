@@ -1,5 +1,6 @@
 :root {
     font-family: 'Roboto', sans-serif;
+    --background-color: rgb(57, 61, 66);
 }
 
 body {
@@ -16,7 +17,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(57, 61, 66);
+    background-color: var(--background-color);
     padding: 30px;
     gap: 30px;
 }
@@ -92,7 +93,7 @@ input {
 }
 
 .search-button:hover,
-.change-cel-fah:hover{
+.change-cel-fah:hover {
     cursor: pointer;
     background-color: red;
 }
@@ -103,6 +104,7 @@ input {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 40px;
 }
 
 .day-temp {
@@ -131,19 +133,21 @@ input {
     gap: 10px;
 }
 
-.location{
+.location {
     font-size: 48px;
+    font-weight: 600;
 }
 
-.condition{
+.condition {
     font-size: 38px;
 }
 
-.temperature{
+.temperature {
+    font-weight: 500;
     font-size: 98px;
 }
 
-.humidity-wind{
+.humidity-wind {
     display: flex;
     gap: 20px;
 }
@@ -158,14 +162,47 @@ input {
     margin-right: 30px;
 }
 
-.hourly-temp{
+.hourly-temp {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+.details-container {
+    background-color: var(--background-color);
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
 
+.details {
+    max-width: 1200px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+}
+
+.detail{
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 22px;
+    padding: 0 10px;
+}
+
+.information{
+    opacity: 0.3;
+    font-size: 14px;
+}
 
 
 /* MEDIA QUERIES */
@@ -193,5 +230,13 @@ input {
         width: 100%;
         margin: 0px 30px;
 
+    }
+
+    .details-container{
+        height: 450px;
+    }
+
+    .detail{
+        align-items: start;
     }
 }
