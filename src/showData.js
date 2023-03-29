@@ -1,4 +1,4 @@
-export function showCurrentData(weatherData) {
+export function showCurrentData(weatherData, astronomyData) {
     const location = document.querySelector('.location');
     location.textContent = weatherData.location.name;
 
@@ -43,7 +43,29 @@ export function showCurrentData(weatherData) {
             }
             showCel = true;
         }
-
     })
 
+    const sunrise = document.querySelector('.sunrise');
+    sunrise.textContent = astronomyData.astronomy.astro.sunrise;
+
+    const sunset = document.querySelector('.sunset');
+    sunset.textContent = astronomyData.astronomy.astro.sunset;
+
+    const feelsLike = document.querySelector('.feels-like');
+    feelsLike.textContent = weatherData.current.feelslike_c + '°';
+
+    const humidityInfo = document.querySelector('.humidity-info');
+    humidityInfo.textContent = weatherData.current.humidity + '%';
+
+    const windDirection = document.querySelector('.wind-direction');
+    windDirection.textContent = weatherData.current.wind_dir;
+
+    const pressure = document.querySelector('.pressure');
+    pressure.textContent = weatherData.current.pressure_mb + ' hPa';
+
+    const visibility = document.querySelector('.visibility');
+    visibility.textContent = weatherData.current.vis_km + ' km';
+
+    const uvIndex = document.querySelector('.uv-index');
+    uvIndex.textContent = weatherData.current.uv;
 }
