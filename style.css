@@ -185,10 +185,10 @@ input {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-.detail{
+.detail {
     height: 50px;
     font-size: 20px;
     display: flex;
@@ -199,10 +199,43 @@ input {
     padding: 0 10px;
 }
 
-.information{
+.information {
     opacity: 0.3;
     font-size: 14px;
 }
+
+.week-temp {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+}
+
+.indicator {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.week-day,
+.week-condition,
+.week-rain,
+.week-humidity,
+.week-temperature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.day > div{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.day {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+
 
 
 /* MEDIA QUERIES */
@@ -232,11 +265,24 @@ input {
 
     }
 
-    .details-container{
+    .details-container {
         height: 450px;
     }
 
-    .detail{
+    .detail {
         align-items: start;
+    }
+
+    .indicator,
+    .day {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        height: 70px;
+    }
+
+
+    .week-rain,
+    .week-humidity {
+        display: none;
     }
 }
