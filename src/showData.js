@@ -87,6 +87,13 @@ export function showCurrentData(weatherData, astronomyData) {
     // 1 week forecast section
 
     const weekTemp = document.querySelector('.week-temp');
+    weekTemp = `<div class="indicator">
+        <div class="week-day">DAY</div>
+        <div class="week-condition"></div>
+        <div class="week-rain">CHANCE OF RAIN</div>
+        <div class="week-humidity">HUMIDITY</div>
+        <div class="week-temperature-indi">TEMPERATURE</div>
+        </div>`
     weekTemp.replaceChildren();
     for (let day = 0; day < 7; day++) {
         const d = new Date(weatherData.forecast.forecastday[day].date);
@@ -94,13 +101,6 @@ export function showCurrentData(weatherData, astronomyData) {
         let dateDay = d.toString();
 
         weekTemp.innerHTML += `
-        <div class="indicator">
-                <div class="week-day">DAY</div>
-                <div class="week-condition"></div>
-                <div class="week-rain">CHANCE OF RAIN</div>
-                <div class="week-humidity">HUMIDITY</div>
-                <div class="week-temperature-indi">TEMPERATURE</div>
-            </div>
         <div class='day'>
         <div class='week-day'>${dateDay.substr(0, 10)}</div>
         <div class='week-condition'><img src='${weatherData.forecast.forecastday[day].day.condition.icon}'></div>
