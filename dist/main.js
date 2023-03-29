@@ -1,1 +1,1 @@
-console.log("test");
+!async function(){try{const o=await fetch("http://api.weatherapi.com/v1/current.json?key=829d734e92bc4a00882163051232803&q=london"),e=await o.json();console.log(e),console.log(e.current.temp_c),console.log("feels like: "+e.current.feelslike_c+" C"),console.log(e.current.condition.text)}catch(o){console.log(o)}}();
