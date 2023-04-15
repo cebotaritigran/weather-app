@@ -96,7 +96,7 @@ export function showCurrentData(weatherData, astronomyData) {
         <div class="week-humidity">HUMIDITY</div>
         <div class="week-temperature-indi">TEMPERATURE</div>
         </div>`
-    for (let day = 0; day < 7; day++) {
+    for (let day = 0; day < 3; day++) {
         const d = new Date(weatherData.forecast.forecastday[day].date);
 
         let dateDay = d.toString();
