@@ -40,7 +40,7 @@ export function showCurrentData(weatherData, astronomyData) {
                 temperatureHour[hour].textContent = weatherData.forecast.forecastday[0].hour[hour].temp_f + '°';
             }
             const weekTemperature = document.querySelectorAll('.week-temperature')
-            for (let day = 0; day < 7; day++) {
+            for (let day = 0; day < 3; day++) {
                 weekTemperature[day].textContent = weatherData.forecast.forecastday[day].day.avgtemp_f + '°';
             }
             showCel = false;
@@ -52,7 +52,7 @@ export function showCurrentData(weatherData, astronomyData) {
                 temperatureHour[hour].textContent = weatherData.forecast.forecastday[0].hour[hour].temp_c + '°';
             }
             const weekTemperature = document.querySelectorAll('.week-temperature')
-            for (let day = 0; day < 7; day++) {
+            for (let day = 0; day < 3; day++) {
                 weekTemperature[day].textContent = weatherData.forecast.forecastday[day].day.avgtemp_c + '°';
             }
             showCel = true;
